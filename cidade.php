@@ -3,7 +3,6 @@ include 'conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['cadastrar_cidade'])) {
-        // Código para cadastrar cidade
         $cidadeNome = $_POST['cidadeNome'];
         $estadoId = $_POST['estadoId'];
 
@@ -15,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Erro ao cadastrar cidade: " . $conn->error;
         }
     } elseif (isset($_POST['excluir_cidades'])) {
-        // Código para excluir todas as cidades
         $sqlExcluirCidades = "DELETE FROM cidades";
         if ($conn->query($sqlExcluirCidades) === TRUE) {
             echo "Todas as cidades foram excluídas com sucesso!";
@@ -23,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Erro ao excluir cidades: " . $conn->error;
         }
     } elseif (isset($_POST['excluir_cidade'])) {
-        // Código para excluir cidade
         $cidadeId = $_POST['excluir_cidade'];
 
         $sql = "DELETE FROM cidades WHERE id = $cidadeId";
@@ -66,7 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <h2>Listar Cidades</h2>
     <?php
-        // Código para listar cidades com siglas dos estados
         $sql = "SELECT cidades.id, cidades.nome as cidade, estados.sigla as estado_sigla 
                 FROM cidades 
                 INNER JOIN estados ON cidades.estado_id = estados.id";
@@ -88,7 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     ?>
 
-    <!-- Formulário para excluir todas as cidades -->
     <form method="post" action="cidade.php">
         <input type="submit" name="excluir_cidades" value="Excluir Todas as Cidades">
     </form>

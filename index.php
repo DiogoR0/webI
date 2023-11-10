@@ -12,14 +12,14 @@
     <ul>
         <li><a href="estado.php">Cadastrar Estado</a></li>
         <li><a href="estado.php?listar_estados">Listar Estados</a></li>
-        <!-- Adicione links para outras operações CRUD de Estados, se necessário -->
+
     </ul>
 
     <h2>Cidades</h2>
     <ul>
         <li><a href="cidade.php">Cadastrar Cidade</a></li>
         <li><a href="cidade.php?listar_cidades">Listar Cidades</a></li>
-        <!-- Adicione links para outras operações CRUD de Cidades, se necessário -->
+
     </ul>
     <style>
     body {
